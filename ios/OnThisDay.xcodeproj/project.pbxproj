@@ -10,6 +10,7 @@
 		E513AA271C34848100A10949 /* Birth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513AA261C34848100A10949 /* Birth.swift */; };
 		E513AA291C34851B00A10949 /* Death.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513AA281C34851B00A10949 /* Death.swift */; };
 		E513AA2B1C34853100A10949 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513AA2A1C34853100A10949 /* Event.swift */; };
+		E513AA2E1C3487B500A10949 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513AA2D1C3487B500A10949 /* APIManager.swift */; };
 		E54673471C33444E00D35958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54673461C33444E00D35958 /* AppDelegate.swift */; };
 		E54673491C33444E00D35958 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54673481C33444E00D35958 /* MainViewController.swift */; };
 		E546734E1C33444E00D35958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E546734D1C33444E00D35958 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		E513AA261C34848100A10949 /* Birth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birth.swift; sourceTree = "<group>"; };
 		E513AA281C34851B00A10949 /* Death.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Death.swift; sourceTree = "<group>"; };
 		E513AA2A1C34853100A10949 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E513AA2D1C3487B500A10949 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E54673431C33444E00D35958 /* OnThisDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnThisDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54673461C33444E00D35958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E54673481C33444E00D35958 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E513AA2C1C34876900A10949 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E513AA2D1C3487B500A10949 /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		E546733A1C33444D00D35958 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		E54673451C33444E00D35958 /* OnThisDay */ = {
 			isa = PBXGroup;
 			children = (
+				E513AA2C1C34876900A10949 /* API */,
 				E513AA251C34842300A10949 /* Models */,
 				E54673461C33444E00D35958 /* AppDelegate.swift */,
 				E54673481C33444E00D35958 /* MainViewController.swift */,
@@ -270,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E513AA291C34851B00A10949 /* Death.swift in Sources */,
+				E513AA2E1C3487B500A10949 /* APIManager.swift in Sources */,
 				E513AA271C34848100A10949 /* Birth.swift in Sources */,
 				E54673491C33444E00D35958 /* MainViewController.swift in Sources */,
 				E54673471C33444E00D35958 /* AppDelegate.swift in Sources */,

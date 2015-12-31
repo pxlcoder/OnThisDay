@@ -15,6 +15,9 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.whiteColor()
         self.title = "On This Day"
+        
+        let apiManager: APIManager = APIManager()
+        apiManager.makeRequest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,4 +27,3 @@ class MainViewController: UIViewController {
 
 
 }
-
