@@ -16,14 +16,14 @@ class APIManager {
     
     var dataDict: NSDictionary?
     
-    var births:[Birth]
-    var deaths:[Death]
-    var events:[Event]
+    var births:[Day]
+    var deaths:[Day]
+    var events:[Day]
     
     init() {
-        self.births = [Birth]()
-        self.deaths = [Death]()
-        self.events = [Event]()
+        self.births = [Day]()
+        self.deaths = [Day]()
+        self.events = [Day]()
     }
     
     convenience init(month: Int, day: Int) {
@@ -38,6 +38,7 @@ class APIManager {
     func changeDate(month: Int, day: Int) {
         self.month = month
         self.day = day
+        urlPath = "http://127.0.0.1:5000/onthisday/\(month)/\(day)"
     }
     
     func makeRequest() {
@@ -51,20 +52,20 @@ class APIManager {
         }
     }
     
+    func getHistory(type: Int) -> [Day] {
+        return [births,deaths,events][type]
+    }
+    
+    private func fillData(inout array: [Day], key: String) {
+        for var i = 0; i<self.dataDict![key]!.count; ++i {
+            let data = self.dataDict![key]![i]
+            array.append(Day(information: data.allValues.first! as! String, year: data.allKeys.first!.integerValue))
+        }
+    }
+    
     private func handleResponse() {
-        for var i = 0; i<self.dataDict!["births"]!.count; ++i {
-            let birth = self.dataDict!["births"]![i]
-            births.append(Birth(person: birth.allValues.first! as! String, year: birth.allKeys.first!.integerValue))
-        }
-        
-        for var i = 0; i<self.dataDict!["deaths"]!.count; ++i {
-            let death = self.dataDict!["deaths"]![i]
-            deaths.append(Death(person: death.allValues.first! as! String, year: death.allKeys.first!.integerValue))
-        }
-        
-        for var i = 0; i<self.dataDict!["events"]!.count; ++i {
-            let event = self.dataDict!["events"]![i]
-            events.append(Event(description: event.allValues.first! as! String, year: event.allKeys.first!.integerValue))
-        }
+        fillData(&births, key: "births")
+        fillData(&deaths, key: "deaths")
+        fillData(&events, key: "events")
     }
 }
